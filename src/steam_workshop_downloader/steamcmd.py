@@ -156,11 +156,11 @@ class SteamCMD(object):
         else:
             validate = None
 
-        print(game_install_dir)
-        print(self.install_path)
         steamcmd_params = (
             self.steamcmd_exe,
-            "+force_install_dir {}".format(game_install_dir) if game_install_dir is not None and game_install_dir != self.install_path else "",
+            "+force_install_dir {}".format(game_install_dir)
+            if game_install_dir is not None and game_install_dir != self.install_path
+            else "",
             "+login {} {}".format(user, password),
             "+workshop_download_item {} {}".format(gameid, workshop_id),
             "{}".format(validate),
